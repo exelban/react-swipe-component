@@ -20,12 +20,25 @@ var Swipe = require('react-swipe-component');
 var Home = React.createClass({
     render: function () {
         return (<Swipe 
+                nodeName="div"
                 onSwipedLeft={this.onSwipeLeftListener} 
                 onSwipedRight={this.onSwipeRightListener} 
                 onSwipedDown={this.onSwipeDownListener} 
                 onSwipedUp={this.onSwipeUpListener}>
             Demo
         </Swipe>);
+    },
+    onSwipeLeftListener: function(){
+        console.log("Swiped left");
+    },
+    onSwipeRightListener: function(){
+        console.log("Swiped right");
+    },
+    onSwipeDownListener: function(){
+        console.log("Swiped down");
+    },
+    onSwipeUpListener: function(){
+        console.log("Swiped up");
     }
 });
 

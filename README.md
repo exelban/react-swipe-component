@@ -56,6 +56,8 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
 
 **```nodeName```** is a string which determines the html element/node that this react component binds its touch events to then returns. The default value is 'div'.
 
+**```style```** is a object which determines the style for element.
+
 #####PropTypes
 ```
   nodeName: React.PropTypes.string,

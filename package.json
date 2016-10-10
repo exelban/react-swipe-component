@@ -1,0 +1,50 @@
+{
+  "name": "react-swipe-component",
+  "version": "1.0.0",
+  "description": "Swipe listener for react",
+  "main": "lib/Swipe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exelban/react-swipe-component.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "swipe",
+    "swipe",
+    "left",
+    "swipe",
+    "right",
+    "swipe",
+    "up",
+    "swipe",
+    "down",
+    "component.",
+    "react",
+    "component",
+    "swipeable",
+    "web",
+    "ios",
+    "android",
+    "react-component"
+  ],
+  "author": {
+    "name": "Serhiy Mytrovtsiy",
+    "email": "mitrovtsiy@ukr.net"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exelban/react-swipe-component/issues"
+  },
+  "homepage": "https://github.com/exelban/react-swipe-component#readme",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-preset-react": "^6.3.13",
+    "react": ">=0.12.x"
+  }
+}

@@ -9,11 +9,11 @@ npm install react-swipe-component
 ##Usage
 ###Example
 ```
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Swipe from 'react-swipe-component';
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Swipe = require('react-swipe-component');
 
-const Home = React.createClass({
+var Home = React.createClass({
     render: function () {
         return (<Swipe 
                 onSwipedLeft={this.onSwipeLeftListener} 

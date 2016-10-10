@@ -1,6 +1,6 @@
 {
   "name": "react-swipe-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Swipe listener for react",
   "main": "lib/Swipe.js",
   "scripts": {

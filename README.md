@@ -6,13 +6,13 @@
 Swipe bindings for react.
 
 ##Install
-```
+```javascript
 npm install react-swipe-component
 ```
 
 ##Usage
 ###Example
-```
+```javascript
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Swipe = require('react-swipe-component');
@@ -59,7 +59,7 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
 **```style```** is a object which determines the style for element.
 
 #####PropTypes
-```
+```javascript
   nodeName: React.PropTypes.string,
   onSwipingUp: React.PropTypes.func,
   onSwipingRight: React.PropTypes.func,

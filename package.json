@@ -43,5 +43,9 @@
     "babel-preset-es2015-loose": "^6.1.4",
     "babel-preset-react": "^6.3.13",
     "react": ">=0.12.x"
+  },
+  "dependencies": {
+    "remark-react": "*",
+    "remark": "*"
   }
 }

@@ -1,7 +1,7 @@
 # react-swipe-component
-[![build status](https://img.shields.io/wercker/ci/wercker/docs.svg)](http://www.npmjs.com/package/react-swipe-component)
-[![npm version](https://badge.fury.io/js/react-swipe-component.svg)](http://www.npmjs.com/package/react-swipe-component)
-[![Download Count](http://img.shields.io/npm/dt/react-swipe-component.svg)](http://www.npmjs.com/package/react-swipe-component)
+[![build status](https://travis-ci.org/exelban/react-swipe-component.svg?branch=master)]
+[![npm version](https://badge.fury.io/js/react-swipe-component.svg)]
+[![Download Count](http://img.shields.io/npm/dt/react-swipe-component.svg)]
 
 Swipe bindings for react.
 

@@ -5,13 +5,13 @@
 
 Swipe bindings for react.
 
-##Install
+## Install
 ```javascript
 npm install react-swipe-component
 ```
 
-##Usage
-###Example
+## Usage
+### Example
 ```javascript
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -45,7 +45,7 @@ var Home = React.createClass({
 ReactDOM.render(<Home/>, document.getElementById('app') );
 ```
 
-###Props
+### Props
 **```onSwipingUp```**, **```onSwipingRight```**, **```onSwipingDown```**, **```onSwipingLeft```**, are called with the event as well as the absolute delta of where the swipe started and where it's currently at. These constantly fire throughout touch events.
 
 **```onSwipedUp```**, **```onSwipedRight```**, **```onSwipedDown```**, **```onSwipedLeft```** are called with the event as well as the x distance, + or -, from where the swipe started to where it ended. These only fire at the end of a touch event.
@@ -58,7 +58,7 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
 
 **```style```** is a object which determines the style for element.
 
-#####PropTypes
+#####P ropTypes
 ```javascript
   nodeName: React.PropTypes.string,
   onSwipingUp: React.PropTypes.func,
@@ -72,5 +72,5 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
   delta: React.PropTypes.number,
   preventDefaultEvent: React.PropTypes.bool
 ```
-##License
-**MIT Licensed**
+## License
+**Apache License 2.0**

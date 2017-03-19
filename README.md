@@ -58,7 +58,7 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
 
 **```style```** is a object which determines the style for element.
 
-#####P ropTypes
+##### PropTypes
 ```javascript
   nodeName: React.PropTypes.string,
   onSwipingUp: React.PropTypes.func,

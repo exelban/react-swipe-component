@@ -60,7 +60,7 @@ ReactDOM.render(<Home/>, document.getElementById('app') );
 
 **```onSwipedUp```**, **```onSwipedRight```**, **```onSwipedDown```**, **```onSwipedLeft```** are called with the event as well as the x distance, + or -, from where the swipe started to where it ended. These only fire at the end of a touch event.
 
-**```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0, x or y. If value is non 0 it means that it's main swipe axis.
+**```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0. If value is non 0 it means that it's main swipe axis.
 
 **```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
 

@@ -6,7 +6,7 @@
 ![](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/react-swipe-component.png)
 
 Swipe bindings for react.
-[Demo](https://github.com)
+[Demo](https://exelban.github.io/react-swipe-component/)
 
 ## Install
 ```javascript

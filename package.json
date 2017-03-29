@@ -32,16 +32,9 @@
     "name": "Serhiy Mytrovtsiy",
     "email": "mitrovtsiy@ukr.net"
   },
-  "license": "MIT",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/exelban/react-swipe-component/issues"
   },
-  "homepage": "https://github.com/exelban/react-swipe-component#readme",
-  "devDependencies": {
-    "babel-cli": "^6.3.17",
-    "babel-plugin-transform-object-rest-spread": "^6.3.13",
-    "babel-preset-es2015-loose": "^6.1.4",
-    "babel-preset-react": "^6.3.13",
-    "react": ">=0.12.x"
-  }
+  "homepage": "https://github.com/exelban/react-swipe-component#readme"
 }

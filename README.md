@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/react-swipe-component.svg)](https://www.npmjs.com/package/react-swipe-component)
 [![Download Count](http://img.shields.io/npm/dm/react-swipe-component.svg)](https://www.npmjs.com/package/react-swipe-component)
 
-![](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/react-swipe-component.png)
+[![Demo image](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/react-swipe-component.png)](https://exelban.github.io/react-swipe-component)
 
 Swipe bindings for react.
 [Demo](https://exelban.github.io/react-swipe-component/)

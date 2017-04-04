@@ -5,7 +5,8 @@
   "main": "lib/Swipe.js",
   "scripts": {
       "build": "babel src -d lib",
-      "prepare": "npm run build"
+      "prepare": "npm run build",
+      "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",

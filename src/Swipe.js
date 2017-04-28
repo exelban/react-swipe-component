@@ -1,23 +1,24 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 const Swipe = React.createClass({
     displayName: 'Swipe',
     propTypes: {
-        nodeName: React.PropTypes.string,
-        mouseSwipe: React.PropTypes.bool,
-        className: React.PropTypes.string,
-        onSwipingUp: React.PropTypes.func,
-        onSwipingRight: React.PropTypes.func,
-        onSwipingDown: React.PropTypes.func,
-        onSwipingLeft: React.PropTypes.func,
-        onSwipedUp: React.PropTypes.func,
-        onSwipedRight: React.PropTypes.func,
-        onSwipedDown: React.PropTypes.func,
-        onSwipedLeft: React.PropTypes.func,
-        onSwipe: React.PropTypes.func,
-        delta: React.PropTypes.number,
-        preventDefaultEvent: React.PropTypes.bool,
-        style: React.PropTypes.object
+        nodeName: PropTypes.string,
+        mouseSwipe: PropTypes.bool,
+        className: PropTypes.string,
+        onSwipingUp: PropTypes.func,
+        onSwipingRight: PropTypes.func,
+        onSwipingDown: PropTypes.func,
+        onSwipingLeft: PropTypes.func,
+        onSwipedUp: PropTypes.func,
+        onSwipedRight: PropTypes.func,
+        onSwipedDown: PropTypes.func,
+        onSwipedLeft: PropTypes.func,
+        onSwipe: PropTypes.func,
+        delta: PropTypes.number,
+        preventDefaultEvent: PropTypes.bool,
+        style: PropTypes.object
     },
     getInitialState() {
         return {

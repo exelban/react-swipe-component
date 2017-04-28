@@ -42,6 +42,9 @@
     "url": "https://github.com/exelban/react-swipe-component/issues"
   },
   "homepage": "https://github.com/exelban/react-swipe-component",
+  "dependencies": {
+    "prop-types": "15.5.8"
+  },
   "devDependencies": {
     "babel-cli": "~6.24.0",
     "babel-preset-es2015": "~6.24.0"

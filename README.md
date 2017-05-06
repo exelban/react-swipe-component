@@ -1,6 +1,6 @@
 # react-swipe-component
 
-[![Codacy grade](https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg?style=flat-square)](https://www.codacy.com/app/exelban/react-swipe-component)
+[![Codacy grade](https://img.shields.io/codacy/grade/5b351b4250e14f91933c44c1207d5dfc.svg?style=flat-square)](https://www.codacy.com/app/exelban/react-swipe-component)
 [![David](https://img.shields.io/david/exelban/react-swipe-component.svg?style=flat-square)](https://david-dm.org/exelban/react-swipe-component)
 [![Travis](https://img.shields.io/travis/exelban/react-swipe-component.svg?style=flat-square)](https://travis-ci.org/exelban/react-swipe-component)
 [![Download Count](https://img.shields.io/npm/dm/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/react-swipe-component)

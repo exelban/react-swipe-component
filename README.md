@@ -17,12 +17,20 @@ npm install react-swipe-component
 ## Usage
 ### Example
 ```javascript
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Swipe = require('react-swipe-component');
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import Swipe from 'react-swipe-component';
 
-let Home = React.createClass({
-    render: function () {
+class Demo extends Component{
+    constructor(){
+        super();
+        this.onSwipeLeftListener = this._onSwipeLeftListener.bind(this);
+        this.onSwipeRightListener = this._onSwipeRightListener.bind(this);
+        this.onSwipeDownListener = this._onSwipeUpListener.bind(this);
+        this.onSwipeUpListener = this._onSwipeDownListener.bind(this);
+        this.onSwipeListener = this._onSwipeListener.bind(this);
+    }
+    render() {
         return (<Swipe 
                 nodeName="div"
                 className="test"
@@ -34,46 +42,49 @@ let Home = React.createClass({
                 onSwipe={this.onSwipeListener}>
             Demo
         </Swipe>);
-    },
-    onSwipeLeftListener(){
+    }
+    _onSwipeLeftListener(){
         console.log("Swiped left");
-    },
-    onSwipeRightListener(){
+    }
+    _onSwipeRightListener(){
         console.log("Swiped right");
-    },
-    onSwipeUpListener(){
+    }
+    _onSwipeUpListener(){
         console.log("Swiped Up");
-    },
-    onSwipeDownListener() {
+    }
+    _onSwipeDownListener() {
         console.log("Swiped down");
-    },
-    onSwipeListener(e){
+    }
+    _onSwipeListener(e){
         if (e[1]===0) console.log("Swipe x: "+e[0]);
         else if (e[0]===0) console.log("Swipe y: "+e[1]);
-    },
-});
+    }
+}
 
-ReactDOM.render(<Home/>, document.getElementById('app') );
+render(<Demo/>, document.getElementById('app') );
 ```
 
 ### Props
-**```onSwipingUp```**, **```onSwipingRight```**, **```onSwipingDown```**, **```onSwipingLeft```**, are called with the event as well as the absolute delta of where the swipe started and where it's currently at. These constantly fire throughout touch events.
-
-**```onSwipedUp```**, **```onSwipedRight```**, **```onSwipedDown```**, **```onSwipedLeft```** are called with the event as well as the x distance, + or -, from where the swipe started to where it ended. These only fire at the end of a touch event.
-
-**```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0. If value is non 0 it means that it's main swipe axis.
-
-**```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
-
 **```nodeName```** is a string which determines the html element/node that this react component binds its touch events to then returns. The default value is 'div'.
 
 **```className```** is a string which determines the html element/node class.
 
 **```style```** is a object which determines the style for element.
 
+
 **```delta```** is the amount of px before we start firing events. Also affects how far onSwipedUp, onSwipedRight, onSwipedDown, and onSwipedLeft need to be before they fire events. The default value is 50.
 
-**```preventDefaultEvent```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is false.
+**```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
+
+**```preventDefaultEvent```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is true.
+
+
+**```onSwipingUp```**, **```onSwipingRight```**, **```onSwipingDown```**, **```onSwipingLeft```**, are called with the event as well as the absolute delta of where the swipe started and where it's currently at. Return distance from starting point.
+
+**```onSwipedUp```**, **```onSwipedRight```**, **```onSwipedDown```**, **```onSwipedLeft```** are called with the event as well as the x distance, + or -, from where the swipe started to where it ended. These only fire at the end of a touch event.
+
+**```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0. If value is non 0 it means that it's main swipe axis.
+
 
 ##### PropTypes
 ```javascript

@@ -1,8 +1,10 @@
 # react-swipe-component
 
+[![Codacy grade](https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg?style=flat-square)]()
 [![david-dm-badge](https://david-dm.org/exelban/react-swipe-component.svg)](https://david-dm.org/exelban/react-swipe-component)
-[![build status](https://travis-ci.org/exelban/react-swipe-component.svg?branch=master)](https://travis-ci.org/exelban/react-swipe-component)
-[![Download Count](http://img.shields.io/npm/dm/react-swipe-component.svg)](https://www.npmjs.com/package/react-swipe-component)
+[![Travis](https://img.shields.io/travis/exelban/react-swipe-component.svg?style=flat-square)]()
+[![Download Count](https://img.shields.io/npm/dm/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/js-popup)
+
 
 [![Demo image](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/react-swipe-component.png)](https://exelban.github.io/react-swipe-component)
 

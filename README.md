@@ -1,6 +1,6 @@
 # react-swipe-component
 
-![Greenkeeper badge](https://badges.greenkeeper.io/exelban/react-swipe-component.svg)
+![david-dm-badge](https://david-dm.org/exelban/react-swipe-component.svg)
 [![build status](https://travis-ci.org/exelban/react-swipe-component.svg?branch=master)](https://travis-ci.org/exelban/react-swipe-component)
 [![npm version](https://badge.fury.io/js/react-swipe-component.svg)](https://www.npmjs.com/package/react-swipe-component)
 [![Download Count](http://img.shields.io/npm/dm/react-swipe-component.svg)](https://www.npmjs.com/package/react-swipe-component)

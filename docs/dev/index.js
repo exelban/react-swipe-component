@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {render} from 'react-dom';
-import Swipe from '../../src/Swipe';
-import Toggle from 'react-toggle';
+import React, {Component} from "react";
+import {render} from "react-dom";
+import Swipe from "../../src/Swipe";
+import Toggle from "react-toggle";
 
 class MainView extends Component{
     constructor(){

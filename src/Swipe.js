@@ -1,5 +1,5 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+const React = require("react");
+const PropTypes = require("prop-types");
 
 class Swipe extends React.Component {
     constructor() {

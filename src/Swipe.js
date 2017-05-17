@@ -22,7 +22,8 @@ class Swipe extends React.Component {
             onTouchMove: this.move,
             onTouchEnd: this.moveEnd,
             className: this.props.className || null,
-            style: this.props.style || {}
+            style: this.props.style || {},
+            onTransitionEnd: this.props.onTransitionEnd
         };
         if (this.props.mouseSwipe) {
             newProps.onMouseMove = this.move;
@@ -107,7 +108,8 @@ Swipe.defaultProps = {
     onSwipedUp: ()=>{},
     onSwipedRight: ()=>{},
     onSwipedDown: ()=>{},
-    onSwipedLeft: ()=>{}
+    onSwipedLeft: ()=>{},
+    onTransitionEnd: ()=>{}
 };
 
 Swipe.propTypes = {
@@ -127,7 +129,8 @@ Swipe.propTypes = {
     onSwipedUp: PropTypes.func,
     onSwipedRight: PropTypes.func,
     onSwipedDown: PropTypes.func,
-    onSwipedLeft: PropTypes.func
+    onSwipedLeft: PropTypes.func,
+    onTransitionEnd: PropTypes.func
 };
 
 export default Swipe;

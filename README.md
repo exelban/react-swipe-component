@@ -87,6 +87,8 @@ render(<Demo/>, document.getElementById('app') );
 
 **```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0. If value is non 0 it means that it's main swipe axis.
 
+**```onTransitionEnd```** event is fired when a CSS transition has completed.
+
 
 ##### PropTypes
 ```javascript
@@ -106,7 +108,8 @@ render(<Demo/>, document.getElementById('app') );
     onSwipedUp: PropTypes.func,
     onSwipedRight: PropTypes.func,
     onSwipedDown: PropTypes.func,
-    onSwipedLeft: PropTypes.func
+    onSwipedLeft: PropTypes.func,
+    onTransitionEnd: PropTypes.func
 ```
 ## License
 

@@ -27,7 +27,7 @@ class MainView extends Component{
                    onSwipedRight={this.onSwipeRightListener}
                    onSwipedDown={this.onSwipeDownListener}
                    onSwipedUp={this.onSwipeUpListener}
-                    onSwipe={this.onSwipeListener}>
+                   onSwipe={this.onSwipeListener}>
                 <div>
                     Swipe to see results.<br/><br/>
                     <label>

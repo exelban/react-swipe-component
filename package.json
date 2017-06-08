@@ -2,9 +2,9 @@
   "name": "react-swipe-component",
   "version": "1.3.2",
   "description": "Swipe listener for react",
-  "main": "lib/Swipe.js",
+  "main": "lib/Swipe.min.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && babel ./lib/Swipe.js --out-file ./lib/Swipe.min.js --presets=babili",
     "prepare": "npm run build",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 0"
@@ -40,6 +40,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babili": "^0.1.2",
     "prop-types": "15.5.9",
     "react": "^15.5.4"
   },

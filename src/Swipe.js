@@ -1,5 +1,5 @@
-const React = require("react");
-const PropTypes = require("prop-types");
+import React from "react";
+import PropTypes from "prop-types";
 
 class Swipe extends React.Component {
     constructor() {
@@ -9,8 +9,7 @@ class Swipe extends React.Component {
             y: 0,
             status: false,
             detected: false,
-            delta: 50,
-            preventDefaultEvent: false
+            delta: 50
         };
         this.moveStart = this._moveStart.bind(this);
         this.move = this._move.bind(this);
@@ -23,34 +22,29 @@ class Swipe extends React.Component {
             onTouchEnd: this.moveEnd,
             className: this.props.className || null,
             style: this.props.style || {},
-            onTransitionEnd: this.props.onTransitionEnd
+            onTransitionEnd: this.props.onTransitionEnd,
+            onMouseMove: this.props.mouseSwipe ? this.move : null,
+            onMouseDown: this.props.mouseSwipe ? this.moveStart : null,
+            onMouseUp: this.props.mouseSwipe ? this.moveEnd : null
         };
-        if (this.props.mouseSwipe) {
-            newProps.onMouseMove = this.move;
-            newProps.onMouseDown = this.moveStart;
-            newProps.onMouseUp = this.moveEnd;
-        }
         return React.createElement(this.props.nodeName || 'div', newProps, this.props.children);
     }
     _moveStart(e){
         if (this.props.preventDefaultEvent) e.preventDefault();
-        let X = Math.abs(e.clientX).toFixed(2) || Math.round(e.touches[0].clientX).toFixed(2);
-        let Y = Math.abs(e.clientY).toFixed(2) || Math.round(e.touches[0].clientY).toFixed(2);
-
         this.setState({
-            x: X,
-            y: Y,
+            x: parseFloat(e.clientX || e.touches[0].clientX).toFixed(2),
+            y: parseFloat(e.clientY || e.touches[0].clientY).toFixed(2),
             status: true,
             detected: false
         });
     }
     _move(e){
         if (this.state.status) {
-            let x = Math.abs(e.clientX).toFixed(2) || Math.round(e.touches[0].clientX).toFixed(2);
-            let y = Math.abs(e.clientY).toFixed(2) || Math.round(e.touches[0].clientY).toFixed(2);
-
-            let tX = parseFloat((x - this.state.x).toFixed(2));
-            let tY = parseFloat((y - this.state.y).toFixed(2));
+            if (this.props.preventDefaultEvent) e.preventDefault();
+            let x = parseFloat(e.clientX || e.touches[0].clientX).toFixed(2),
+                y = parseFloat(e.clientY || e.touches[0].clientY).toFixed(2),
+                tX = parseFloat((x - this.state.x).toFixed(2)),
+                tY = parseFloat((y - this.state.y).toFixed(2));
 
             if (Math.abs(tX) > Math.abs(tY) && this.props.onSwipe) this.props.onSwipe([tX, 0]);
             else if (Math.abs(tX) < Math.abs(tY) && this.props.onSwipe) this.props.onSwipe([0, tY]);
@@ -84,7 +78,7 @@ class Swipe extends React.Component {
             }
         }
     }
-    _moveEnd(e){
+    _moveEnd(){
         if (this.props.preventDefaultEvent) e.preventDefault();
         this.setState({
             x: 0,
@@ -111,7 +105,6 @@ Swipe.defaultProps = {
     onSwipedLeft: ()=>{},
     onTransitionEnd: ()=>{}
 };
-
 Swipe.propTypes = {
     nodeName: PropTypes.string,
     className: PropTypes.string,

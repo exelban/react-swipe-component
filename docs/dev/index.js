@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import Swipe from "../../src/Swipe";
+import Swipe from "../../lib/Swipe.min";
 import Toggle from "react-toggle";
 
 class MainView extends Component{

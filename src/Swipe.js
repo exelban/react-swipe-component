@@ -78,7 +78,7 @@ class Swipe extends React.Component {
             }
         }
     }
-    _moveEnd(){
+    _moveEnd(e){
         if (this.props.preventDefaultEvent) e.preventDefault();
         this.setState({
             x: 0,

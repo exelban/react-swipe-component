@@ -26,7 +26,7 @@ gulp.task("css", function(){
         .pipe(useref())
         .pipe(concatCSS("style.min.css"))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("docs/include/"))
+        .pipe(gulp.dest("docs/include/"));
 });
 gulp.task("js", function(){
     return browserify({

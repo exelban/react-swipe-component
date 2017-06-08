@@ -30,7 +30,9 @@ class Swipe extends React.Component {
         return React.createElement(this.props.nodeName || 'div', newProps, this.props.children);
     }
     _moveStart(e){
-        if (this.props.preventDefaultEvent) e.preventDefault();
+        if (this.props.preventDefaultEvent) {
+            e.preventDefault();
+        }
         this.setState({
             x: parseFloat(e.clientX || e.touches[0].clientX).toFixed(2),
             y: parseFloat(e.clientY || e.touches[0].clientY).toFixed(2),
@@ -40,7 +42,9 @@ class Swipe extends React.Component {
     }
     _move(e){
         if (this.state.status) {
-            if (this.props.preventDefaultEvent) e.preventDefault();
+            if (this.props.preventDefaultEvent) {
+                e.preventDefault();
+            }
             let x = parseFloat(e.clientX || e.touches[0].clientX).toFixed(2),
                 y = parseFloat(e.clientY || e.touches[0].clientY).toFixed(2),
                 tX = parseFloat((x - this.state.x).toFixed(2)),
@@ -50,11 +54,19 @@ class Swipe extends React.Component {
             else if (Math.abs(tX) < Math.abs(tY) && this.props.onSwipe) this.props.onSwipe([0, tY]);
 
             if (Math.abs(tX) >= this.props.delta) {
-                if (tX > this.props.delta) this.props.onSwipingRight(tX);
-                else if (tX < -this.props.delta) this.props.onSwipingLeft(tX);
+                if (tX > this.props.delta) {
+                    this.props.onSwipingRight(tX);
+                }
+                else if (tX < -this.props.delta) {
+                    this.props.onSwipingLeft(tX);
+                }
             } else if (Math.abs(tY) >= this.props.delta) {
-                if (tY > this.props.delta) this.props.onSwipingDown(tY);
-                else if (tY < -this.props.delta) this.props.onSwipingUp(tY);
+                if (tY > this.props.delta) {
+                    this.props.onSwipingDown(tY);
+                }
+                else if (tY < -this.props.delta) {
+                    this.props.onSwipingUp(tY);
+                }
             }
 
             if (!this.state.detected) {
@@ -79,7 +91,9 @@ class Swipe extends React.Component {
         }
     }
     _moveEnd(e){
-        if (this.props.preventDefaultEvent) e.preventDefault();
+        if (this.props.preventDefaultEvent) {
+            e.preventDefault();
+        }
         this.setState({
             x: 0,
             y: 0,

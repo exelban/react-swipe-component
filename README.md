@@ -14,7 +14,7 @@ Swipe bindings for react.
 
 ## Install
 ```javascript
-npm install react-swipe-component
+npm install react-swipe-component --save
 ```
 
 ## Usage

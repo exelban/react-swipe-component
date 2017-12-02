@@ -1,9 +1,12 @@
 import React, {Component} from "react";
-import {render} from "react-dom";
-import Swipe from "../../src/Swipe";
+import { render } from "react-dom";
+import "./style.css";
+import "react-toggle/style.css";
+import Swipe from "react-swipe-component";
 import Toggle from "react-toggle";
 
-class MainView extends Component{
+
+class AppView extends Component {
     constructor(){
         super();
         this.state = {
@@ -18,28 +21,32 @@ class MainView extends Component{
         this.handleToggleSwipe = this._handleToggleSwipe.bind(this);
     }
     render(){
-        return (<div className="mainWindow">
-            <Swipe nodeName="div"
-                   mouseSwipe={true}
-                   className="test"
-                   preventDefaultEvent={true}
-                   onSwipedLeft={this.onSwipeLeftListener}
-                   onSwipedRight={this.onSwipeRightListener}
-                   onSwipedDown={this.onSwipeDownListener}
-                   onSwipedUp={this.onSwipeUpListener}
-                   onSwipe={this.onSwipeListener}>
-                <div>
-                    Swipe to see results.<br/><br/>
-                    <label>
-                        <Toggle
-                            defaultChecked={this.state.continuousSwipeListener}
-                            onChange={this.handleToggleSwipe}/>
-                        <span>Continuous swipe listener</span>
-                    </label>
-                </div>
-            </Swipe>
-            <footer>{this.state.actionText}</footer>
-        </div>);
+        return (
+            <div className="root">
+                <Swipe nodeName="div"
+                       mouseSwipe={true}
+                       className="test"
+                       preventDefaultEvent={true}
+                       onSwipedLeft={this.onSwipeLeftListener}
+                       onSwipedRight={this.onSwipeRightListener}
+                       onSwipedDown={this.onSwipeDownListener}
+                       onSwipedUp={this.onSwipeUpListener}
+                       onSwipe={this.onSwipeListener}>
+                    <div>
+                        Swipe to see results.<br/><br/>
+                        <label>
+                            <Toggle
+                                defaultChecked={this.state.continuousSwipeListener}
+                                onChange={this.handleToggleSwipe}/>
+                            <span>Continuous swipe listener</span>
+                        </label>
+                    </div>
+
+                </Swipe>
+
+                <footer>{this.state.actionText}</footer>
+            </div>
+        );
     }
     _onSwipeLeftListener(){
         this.setState({actionText: "Swiped left"});
@@ -62,4 +69,6 @@ class MainView extends Component{
     }
 }
 
-render(<MainView/>, document.getElementById('app') );
+
+
+render(<AppView/>, document.getElementById("app"));

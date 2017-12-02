@@ -27,6 +27,7 @@ class Swipe extends React.Component {
             onMouseDown: this.props.mouseSwipe ? this.moveStart : null,
             onMouseUp: this.props.mouseSwipe ? this.moveEnd : null
         };
+        newProps.style.touchAction = "none";
         return React.createElement(this.props.nodeName || 'div', newProps, this.props.children);
     }
     _moveStart(e){
@@ -106,7 +107,7 @@ class Swipe extends React.Component {
 Swipe.defaultProps = {
     delta: 50,
     mouseSwipe: false,
-    preventDefaultEvent: true,
+    preventDefaultEvent: false,
 
     onSwipe: ()=>{},
     onSwipingUp: ()=>{},

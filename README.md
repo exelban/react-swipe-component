@@ -3,7 +3,6 @@
 
 [![Codacy grade](https://img.shields.io/codacy/grade/c43c0f7bf541405e9d1cb073b602a35d.svg?style=flat-square)](https://www.codacy.com/app/exelban/react-swipe-component)
 [![David](https://img.shields.io/david/exelban/react-swipe-component.svg?style=flat-square)](https://david-dm.org/exelban/react-swipe-component)
-[![Travis](https://img.shields.io/travis/exelban/react-swipe-component.svg?style=flat-square)](https://travis-ci.org/exelban/react-swipe-component)
 [![Download Count](https://img.shields.io/npm/dm/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/react-swipe-component)
 
 
@@ -79,8 +78,7 @@ render(<Demo/>, document.getElementById('app') );
 
 **```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
 
-**```preventDefaultEvent```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is true.
-
+**```preventDefaultEvent```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is false.
 
 **```onSwipingUp```**, **```onSwipingRight```**, **```onSwipingDown```**, **```onSwipingLeft```**, are called with the event as well as the absolute delta of where the swipe started and where it's currently at. Return distance from starting point.
 
@@ -112,6 +110,18 @@ render(<Demo/>, document.getElementById('app') );
     onSwipedLeft: PropTypes.func,
     onTransitionEnd: PropTypes.func
 ```
+
+## Developing
+
+
+## What's new
+
+### v1.4.0
+    - fixed Google Chrome preventDefault error in console;
+    - small fixed with main example;
+    - started using webpack to compile to ES5;
+    - updated dependency;
+
 ## License
 
 [Apache License 2.0](https://github.com/exelban/react-swipe-component/blob/master/LICENSE.md)

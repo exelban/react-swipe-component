@@ -1,6 +1,6 @@
-.gitignore
-node_modules/
-docs/
-.travis.yml
 .idea
-gulpfile.js
+/docs
+/node_modules
+.gitignore
+.npmignore
+.DS_Store

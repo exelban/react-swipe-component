@@ -1,0 +1,17 @@
+{
+  "name": "React_swipe_component_demo_page",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-swipe-component": "^1.3.6",
+    "react-toggle": "^4.0.2",
+    "webpack": "^3.9.1"
+  }
+}

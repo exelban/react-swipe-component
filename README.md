@@ -33,13 +33,13 @@ class Demo extends Component{
         this.onSwipeListener = this._onSwipeListener.bind(this);
     }
     render() {
-        return (<Swipe 
+        return (<Swipe
                 nodeName="div"
                 className="test"
                 mouseSwipe={false}
-                onSwipedLeft={this.onSwipeLeftListener} 
-                onSwipedRight={this.onSwipeRightListener} 
-                onSwipedDown={this.onSwipeDownListener} 
+                onSwipedLeft={this.onSwipeLeftListener}
+                onSwipedRight={this.onSwipeRightListener}
+                onSwipedDown={this.onSwipeDownListener}
                 onSwipedUp={this.onSwipeUpListener}
                 onSwipe={this.onSwipeListener}>
             Demo
@@ -86,6 +86,8 @@ render(<Demo/>, document.getElementById('app') );
 
 **```onSwipe```** are called when the swipe started. Return distance from starting point [x,y]. One value will be 0. If value is non 0 it means that it's main swipe axis.
 
+**```onSwipeEnd```** are called when the swipe ended.
+
 **```onTransitionEnd```** event is fired when a CSS transition has completed.
 
 
@@ -100,6 +102,7 @@ render(<Demo/>, document.getElementById('app') );
     preventDefaultEvent: PropTypes.bool,
 
     onSwipe: PropTypes.func,
+    onSwipeEnd: PropTypes.func,
     onSwipingUp: PropTypes.func,
     onSwipingRight: PropTypes.func,
     onSwipingDown: PropTypes.func,

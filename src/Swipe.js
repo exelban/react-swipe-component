@@ -101,6 +101,7 @@ class Swipe extends React.Component {
             status: false,
             detected: false
         });
+        this.props.onSwipeEnd(true);
     }
 }
 
@@ -110,6 +111,7 @@ Swipe.defaultProps = {
     preventDefaultEvent: false,
 
     onSwipe: ()=>{},
+    onSwipeEnd: ()=>{},
     onSwipingUp: ()=>{},
     onSwipingRight: ()=>{},
     onSwipingDown: ()=>{},
@@ -130,6 +132,7 @@ Swipe.propTypes = {
     preventDefaultEvent: PropTypes.bool,
 
     onSwipe: PropTypes.func,
+    onSwipeEnd: PropTypes.func,
     onSwipingUp: PropTypes.func,
     onSwipingRight: PropTypes.func,
     onSwipingDown: PropTypes.func,

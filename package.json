@@ -11,7 +11,7 @@
     "flow-gen": "flow gen-flow-files ./src/index.js > ./lib/index.js.flow",
     "fix-low-gen": "sh ./fix-flow-gen.sh",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build:prod"
   },
   "keywords": [
     "react",

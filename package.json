@@ -1,7 +1,7 @@
 {
   "name": "react-swipe-component",
   "title": "react-swipe-component",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Swipe listener for react",
   "main": "lib/index.min.js",
   "scripts": {
@@ -10,11 +10,8 @@
     "babel": "babel src -d lib && babel ./lib/index.js --out-file ./lib/index.min.js --presets=minify",
     "flow-gen": "flow gen-flow-files ./src/index.js > ./lib/index.js.flow",
     "fix-low-gen": "sh ./fix-flow-gen.sh",
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/exelban/react-swipe-component.git"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
@@ -33,11 +30,15 @@
     "name": "Serhiy Mytrovtsiy",
     "email": "mitrovtsiy@ukr.net"
   },
-  "license": "Apache-2.0",
+  "homepage": "https://github.com/exelban/react-swipe-component",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exelban/react-swipe-component.git"
+  },
   "bugs": {
     "url": "https://github.com/exelban/react-swipe-component/issues"
   },
-  "homepage": "https://github.com/exelban/react-swipe-component",
+  "license": "Apache-2.0",
   "babel": {
     "presets": [
       "@babel/react",

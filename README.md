@@ -1,8 +1,6 @@
 # react-swipe-component
 
 
-[![Codacy grade](https://img.shields.io/codacy/grade/c43c0f7bf541405e9d1cb073b602a35d.svg?style=flat-square)](https://www.codacy.com/app/exelban/react-swipe-component)
-[![David](https://img.shields.io/david/exelban/react-swipe-component.svg?style=flat-square)](https://david-dm.org/exelban/react-swipe-component)
 [![Download Count](https://img.shields.io/npm/dm/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/react-swipe-component)
 
 
@@ -19,9 +17,9 @@ npm install react-swipe-component --save
 ## Usage
 ### Example
 ```javascript
-import React, {Component} from 'react';
-import {render} from 'react-dom';
-import Swipe from 'react-swipe-component';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import Swipe from 'react-swipe-component'
 
 class Demo extends Component{
   constructor(){

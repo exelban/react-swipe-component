@@ -6,7 +6,7 @@ import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
 import PropTypes from 'prop-types'
 
-import Swipe from '../../lib/index'
+import Swipe from 'react-swipe-component'
 import './style.css'
 
 

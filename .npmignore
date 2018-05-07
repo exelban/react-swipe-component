@@ -6,3 +6,6 @@
 .DS_Store
 yarn.lock
 yarn-error.lock
+fix-flow-gen.sh
+.eslintrc.js
+.flowconfig

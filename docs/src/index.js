@@ -74,7 +74,7 @@ class AppView extends React.Component<Props, State> {
   }
 
   _onSwipeEnd () {
-    this.setState({ actionText: 'Swiped Ended' })
+    this.setState({ actionText: 'Swipe Ended' })
   }
   _onSwipeLeftListener () {
     this.setState({ actionText: 'Swiped left' })

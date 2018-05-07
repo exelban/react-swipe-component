@@ -1,3 +1,5 @@
 node_modules/
 .idea
 .DS_Store
+yarn.lock
+yarn-error.lock

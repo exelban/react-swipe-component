@@ -24,43 +24,49 @@ import {render} from 'react-dom';
 import Swipe from 'react-swipe-component';
 
 class Demo extends Component{
-    constructor(){
-        super();
-        this.onSwipeLeftListener = this._onSwipeLeftListener.bind(this);
-        this.onSwipeRightListener = this._onSwipeRightListener.bind(this);
-        this.onSwipeDownListener = this._onSwipeUpListener.bind(this);
-        this.onSwipeUpListener = this._onSwipeDownListener.bind(this);
-        this.onSwipeListener = this._onSwipeListener.bind(this);
-    }
-    render() {
-        return (<Swipe
+  constructor(){
+    super()
+    this.onSwipeEnd = this._onSwipeEnd.bind(this)
+    this.onSwipeLeftListener = this._onSwipeLeftListener.bind(this)
+    this.onSwipeRightListener = this._onSwipeRightListener.bind(this)
+    this.onSwipeDownListener = this._onSwipeUpListener.bind(this)
+    this.onSwipeUpListener = this._onSwipeDownListener.bind(this)
+    this.onSwipeListener = this._onSwipeListener.bind(this)
+  }
+  render() {
+    return (<Swipe
                 nodeName="div"
                 className="test"
                 mouseSwipe={false}
+                onSwipeEnd={this.onSwipeEnd}
                 onSwipedLeft={this.onSwipeLeftListener}
                 onSwipedRight={this.onSwipeRightListener}
                 onSwipedDown={this.onSwipeDownListener}
                 onSwipedUp={this.onSwipeUpListener}
                 onSwipe={this.onSwipeListener}>
             Demo
-        </Swipe>);
-    }
-    _onSwipeLeftListener(){
-        console.log("Swiped left");
-    }
-    _onSwipeRightListener(){
-        console.log("Swiped right");
-    }
-    _onSwipeUpListener(){
-        console.log("Swiped Up");
-    }
-    _onSwipeDownListener() {
-        console.log("Swiped down");
-    }
-    _onSwipeListener(e){
-        if (e[1]===0) console.log("Swipe x: "+e[0]);
-        else if (e[0]===0) console.log("Swipe y: "+e[1]);
-    }
+    </Swipe>)
+  }
+
+  _onSwipeEnd () {
+    this.setState({ actionText: 'Swiped Ended' })
+  }
+  _onSwipeLeftListener () {
+    this.setState({ actionText: 'Swiped left' })
+  }
+  _onSwipeRightListener () {
+    this.setState({ actionText: 'Swiped right' })
+  }
+  _onSwipeUpListener () {
+    this.setState({ actionText: 'Swiped Up' })
+  }
+  _onSwipeDownListener () {
+    this.setState({ actionText: 'Swiped down' })
+  }
+  _onSwipeListener (e) {
+    if (e[1] === 0 && this.state.continuousSwipeListener) this.setState({ actionText: `Swipe x: ${e[0]}` })
+    else if (e[0] === 0 && this.state.continuousSwipeListener) this.setState({ actionText: `Swipe y: ${e[1]}` })
+  }
 }
 
 render(<Demo/>, document.getElementById('app') );
@@ -93,31 +99,42 @@ render(<Demo/>, document.getElementById('app') );
 
 ##### PropTypes
 ```javascript
-    nodeName: PropTypes.string,
-    className: PropTypes.string,
-    style: PropTypes.object,
+{
+  nodeName?: string,
+  className?: string,
+  style?: Object,
 
-    delta: PropTypes.number,
-    mouseSwipe: PropTypes.bool,
-    preventDefaultEvent: PropTypes.bool,
+  delta: number,
+  mouseSwipe?: boolean,
+  preventDefaultEvent?: boolean,
 
-    onSwipe: PropTypes.func,
-    onSwipeEnd: PropTypes.func,
-    onSwipingUp: PropTypes.func,
-    onSwipingRight: PropTypes.func,
-    onSwipingDown: PropTypes.func,
-    onSwipingLeft: PropTypes.func,
-    onSwipedUp: PropTypes.func,
-    onSwipedRight: PropTypes.func,
-    onSwipedDown: PropTypes.func,
-    onSwipedLeft: PropTypes.func,
-    onTransitionEnd: PropTypes.func
+  children?: any,
+
+  onSwipe: PropTypes.func,
+  onSwipeEnd: PropTypes.func,
+  onSwipingUp: PropTypes.func,
+  onSwipingRight: PropTypes.func,
+  onSwipingDown: PropTypes.func,
+  onSwipingLeft: PropTypes.func,
+  onSwipedUp: PropTypes.func,
+  onSwipedRight: PropTypes.func,
+  onSwipedDown: PropTypes.func,
+  onSwipedLeft: PropTypes.func,
+  onTransitionEnd: PropTypes.func,
+}
 ```
 
 ## Developing
 
 
 ## What's new
+
+### v2.0.0
+    - updated all dependencies;
+    - added flow types;
+    - added eslint;
+    - added onSwipeEnd to example;
+    - renamed ./lib/Swipe to ./lib/index;
 
 ### v1.4.0
     - fixed Google Chrome preventDefault error in console;

@@ -10,7 +10,11 @@ Swipe bindings for react.
 [Demo](https://exelban.github.io/react-swipe-component/)
 
 ## Install
-```javascript
+```sh
+yarn add react-swipe-component
+```  
+Or with npm:  
+```sh
 npm install react-swipe-component --save
 ```
 
@@ -47,7 +51,7 @@ class Demo extends Component{
   }
 
   _onSwipeEnd () {
-    this.setState({ actionText: 'Swiped Ended' })
+    this.setState({ actionText: 'Swipe Ended' })
   }
   _onSwipeLeftListener () {
     this.setState({ actionText: 'Swiped left' })
@@ -106,8 +110,6 @@ render(<Demo/>, document.getElementById('app') );
   mouseSwipe?: boolean,
   preventDefaultEvent?: boolean,
 
-  children?: any,
-
   onSwipe: PropTypes.func,
   onSwipeEnd: PropTypes.func,
   onSwipingUp: PropTypes.func,
@@ -123,7 +125,22 @@ render(<Demo/>, document.getElementById('app') );
 ```
 
 ## Developing
+### Library
+```sh
+git clone git@github.com:exelban/react-swipe-component.git
+cd react-swipe-component
+yarn install
 
+yarn build:prod
+```
+
+### Demo
+If You want to test a package on demo page:
+```sh
+cd docs
+yarn install
+yarn dev
+```
 
 ## What's new
 
@@ -133,6 +150,7 @@ render(<Demo/>, document.getElementById('app') );
     - added eslint;
     - added onSwipeEnd to example;
     - renamed ./lib/Swipe to ./lib/index;
+    - moved to Babel 7 for compiling;
 
 ### v1.4.0
     - fixed Google Chrome preventDefault error in console;

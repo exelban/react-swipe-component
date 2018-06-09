@@ -1,6 +1,6 @@
 .idea
-/docs
-/node_modules
+docs
+node_modules
 .gitignore
 .npmignore
 .DS_Store

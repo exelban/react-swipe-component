@@ -144,6 +144,12 @@ yarn dev
 
 ## What's new
 
+
+### v2.1.0
+    - updated some dependencies;
+    - removed unnecessary comments;
+    - fixed docs script for build;
+    
 ### v2.0.0
     - updated all dependencies;
     - added flow types;

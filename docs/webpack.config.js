@@ -19,7 +19,7 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: PATH.output,
     filename: '[name].min.js',
   },
   module: {
@@ -39,11 +39,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CleanWebpackPlugin(PATH.output),
   ],
@@ -52,7 +47,7 @@ module.exports = {
     historyApiFallback: true,
     compress: false,
     inline: true,
-    publicPath: '/',
+    publicPath: '/dist',
   },
   optimization: {
     splitChunks: {

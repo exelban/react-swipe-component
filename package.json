@@ -1,7 +1,7 @@
 {
   "name": "react-swipe-component",
   "title": "react-swipe-component",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Swipe listener for react",
   "main": "lib/index.min.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "babel": "babel src -d lib && babel ./lib/index.js --out-file ./lib/index.min.js --presets=minify",
     "flow-gen": "flow gen-flow-files ./src/index.js > ./lib/index.js.flow",
     "fix-low-gen": "sh ./fix-flow-gen.sh",
-    "test": "echo \"Error: no test specified\" && exit 0",
     "prepublish": "npm run build:prod"
   },
   "keywords": [
@@ -49,16 +48,17 @@
     ]
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
+    "@babel/preset-flow": "^7.0.0-beta.49",
+    "@babel/preset-react": "^7.0.0-beta.49",
+    "babel-eslint": "^8.2.3",
     "babel-preset-minify": "^0.4.1",
-    "@babel/cli": "^7.0.0-beta.46",
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
-    "@babel/preset-flow": "^7.0.0-beta.46",
-    "@babel/preset-react": "^7.0.0-beta.46",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-flowtype": "^2.46.3",

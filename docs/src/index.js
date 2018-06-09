@@ -101,4 +101,4 @@ const app = document.getElementById('app')
 if (app == null) {
   throw new Error('No document')
 }
-render(<AppView title='1'/>, app)
+render(<AppView/>, app)

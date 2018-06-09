@@ -1,20 +1,4 @@
-[ignore]
-
-[include]
-
-[libs]
-
-[lints]
-
 [options]
 module.system.node.resolve_dirname=src
 module.system.node.resolve_dirname=docs
 module.system.node.resolve_dirname=node_modules
-module.use_strict=true
-module.file_ext=.vue
-module.file_ext=.js
-module.file_ext=.svg
-module.file_ext=.scss
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
-
-[strict]

@@ -1,7 +1,7 @@
 # react-swipe-component
 
 
-[![Download Count](https://img.shields.io/npm/dm/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/react-swipe-component)
+[![Download Count](https://img.shields.io/npm/dt/react-swipe-component.svg?style=flat-square)](http://www.npmjs.com/package/react-swipe-component)
 
 
 [![Demo image](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/react-swipe-component.png)](https://exelban.github.io/react-swipe-component)

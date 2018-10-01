@@ -77,6 +77,8 @@ render(<Demo/>, document.getElementById('app') );
 ### Props
 **```nodeName```** is a string which determines the html element/node that this react component binds its touch events to then returns. The default value is 'div'.
 
+**```node```** is a option if you'd like to pass a node instead of nodeName(e.g. styled-components).
+
 **```className```** is a string which determines the html element/node class.
 
 **```style```** is a object which determines the style for element.
@@ -103,6 +105,7 @@ render(<Demo/>, document.getElementById('app') );
 ```javascript
 {
   nodeName?: string,
+  node?: React.Node,
   className?: string,
   style?: Object,
 

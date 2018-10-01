@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 type Props = {
   nodeName?: string,
+  node?: React.Node,
   className?: string,
   style?: Object,
 
@@ -87,7 +88,7 @@ export default class Swipe extends React.Component<Props, State> {
       onMouseUp: this.props.mouseSwipe ? this.moveEnd : null,
     }
     newProps.style.touchAction = 'none'
-    return React.createElement(this.props.nodeName || 'div', newProps, this.props.children)
+    return React.createElement(this.props.nodeName || this.props.node || 'div', newProps, this.props.children)
   }
 
   _moveStart (e: Object) {

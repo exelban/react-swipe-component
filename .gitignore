@@ -5,3 +5,4 @@ node_modules
 .DS_Store
 yarn.lock
 yarn-error.lock
+./docs/dist/index.html

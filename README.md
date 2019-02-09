@@ -21,8 +21,8 @@ npm install react-swipe-component --save
 ## Usage
 ### Example
 ```javascript
-import * as React from "react"
-import * as ReactDOM from "react-dom"
+import React from "react"
+import ReactDOM from "react-dom"
 import {Swipe, Position} from "react-swipe-component"
 
 class Demo extends React.Component<{}, {}>{
@@ -40,22 +40,22 @@ class Demo extends React.Component<{}, {}>{
     </Swipe>
   }
 
-  onSwipeEnd = (): void => {
+  onSwipeEnd = () => {
     console.log("Swipe Ended")
   }
-  onSwipeLeftListener = (): void => {
+  onSwipeLeftListener = () => {
     console.log("Swiped left")
   }
-  onSwipeRightListener = (): void => {
+  onSwipeRightListener = () => {
     console.log("Swiped right")
   }
-  onSwipeUpListener = (): void => {
+  onSwipeUpListener = () => {
     console.log("Swiped Up")
   }
-  onSwipeDownListener = (): void => {
+  onSwipeDownListener = () => {
     console.log("Swiped down")
   }
-  onSwipeListener = (p: Position): void => {
+  onSwipeListener = (p) => {
     if (p.x !== 0) {
       console.log(`Swipe x: ${p.x}`)
     }
@@ -80,7 +80,9 @@ ReactDOM.render(<Demo/>, document.getElementById("app"))
 
 **```delta```** is the amount of px before we start firing events. Also affects how far onSwipedUp, onSwipedRight, onSwipedDown, and onSwipedLeft need to be before they fire events. The default value is 50.
 
-**```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
+**```detectMouse```** is allow you to turn off swipe listener for mouse event. The default value is true.
+
+**```detectTouch```** is allow you to turn on swipe listener for touch event. The default value is false.
 
 **```preventDefault```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is false.
 

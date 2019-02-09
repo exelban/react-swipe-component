@@ -23,6 +23,7 @@ class Main extends React.Component<{}, State>{
       <Swipe
         nodeName="div"
         className="test"
+        detectTouch={true}
         onSwipeEnd={this.onSwipeEnd}
         onSwipedLeft={this.onSwipeLeftListener}
         onSwipedRight={this.onSwipeRightListener}

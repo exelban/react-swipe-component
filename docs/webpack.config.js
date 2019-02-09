@@ -56,7 +56,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(PATH.output),
     new HtmlWebpackPlugin({
-      template: `${PATH.src}/template.html`,
+      template: `index.html`,
       filename: 'index.html',
       inject: true,
       minify: {

@@ -1,6 +1,6 @@
-node_modules
 .idea
+.git
+node_modules
 .DS_Store
 yarn.lock
 yarn-error.lock
-lib

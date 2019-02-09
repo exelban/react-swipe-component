@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module":"es2015",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "dom"],
+    "strict": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "outDir": "./lib",
+    "jsx": "react"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

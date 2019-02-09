@@ -1,16 +1,12 @@
 {
   "name": "react-swipe-component",
   "title": "react-swipe-component",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Swipe listener for react",
-  "main": "lib/index.min.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build:prod": "yarn babel && yarn flow-gen && yarn fix-low-gen",
-    "build:dev": "yarn babel",
-    "babel": "babel src -d lib && babel ./lib/index.js --out-file ./lib/index.min.js --presets=minify",
-    "flow-gen": "flow gen-flow-files ./src/index.js > ./lib/index.js.flow",
-    "fix-low-gen": "sh ./fix-flow-gen.sh",
-    "prepublish": "npm run build:prod"
+    "build": "tsc"
   },
   "keywords": [
     "react",
@@ -23,7 +19,8 @@
     "swipe-listener",
     "listener",
     "swipeable",
-    "react-component"
+    "react-component",
+    "typescript"
   ],
   "author": {
     "name": "Serhiy Mytrovtsiy",
@@ -38,33 +35,11 @@
     "url": "https://github.com/exelban/react-swipe-component/issues"
   },
   "license": "Apache-2.0",
-  "babel": {
-    "presets": [
-      "@babel/react",
-      "@babel/flow"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+  "devDependencies": {
+    "@types/react": "16.8.2",
+    "typescript": "3.3.3"
   },
   "dependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
-    "@babel/preset-flow": "^7.0.0-beta.49",
-    "@babel/preset-react": "^7.0.0-beta.49",
-    "babel-eslint": "^8.2.3",
-    "babel-preset-minify": "^0.4.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-flowtype": "^2.46.3",
-    "eslint-plugin-flowtype-errors": "^3.5.1",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-react": "^7.7.0",
-    "flow-bin": "^0.71.0"
+    "react": "^16.8.1"
   }
 }

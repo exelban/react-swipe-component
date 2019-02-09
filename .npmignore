@@ -1,11 +1,7 @@
 .idea
-docs
+.git
 node_modules
-.gitignore
-.npmignore
+src
 .DS_Store
 yarn.lock
 yarn-error.lock
-fix-flow-gen.sh
-.eslintrc.js
-.flowconfig

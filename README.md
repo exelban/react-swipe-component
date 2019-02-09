@@ -21,57 +21,51 @@ npm install react-swipe-component --save
 ## Usage
 ### Example
 ```javascript
-import React, { Component } from 'react'
-import { render } from 'react-dom'
-import Swipe from 'react-swipe-component'
+import * as React from "react"
+import * as ReactDOM from "react-dom"
+import {Swipe, Position} from "react-swipe-component"
 
-class Demo extends Component{
-  constructor(){
-    super()
-    this.onSwipeEnd = this._onSwipeEnd.bind(this)
-    this.onSwipeLeftListener = this._onSwipeLeftListener.bind(this)
-    this.onSwipeRightListener = this._onSwipeRightListener.bind(this)
-    this.onSwipeDownListener = this._onSwipeUpListener.bind(this)
-    this.onSwipeUpListener = this._onSwipeDownListener.bind(this)
-    this.onSwipeListener = this._onSwipeListener.bind(this)
-  }
+class Demo extends React.Component<{}, {}>{
   render() {
-    return (<Swipe
-                nodeName="div"
-                className="test"
-                mouseSwipe={false}
-                onSwipeEnd={this.onSwipeEnd}
-                onSwipedLeft={this.onSwipeLeftListener}
-                onSwipedRight={this.onSwipeRightListener}
-                onSwipedDown={this.onSwipeDownListener}
-                onSwipedUp={this.onSwipeUpListener}
-                onSwipe={this.onSwipeListener}>
-            Demo
-    </Swipe>)
+    return <Swipe
+      nodeName="div"
+      className="test"
+      onSwipeEnd={this.onSwipeEnd}
+      onSwipedLeft={this.onSwipeLeftListener}
+      onSwipedRight={this.onSwipeRightListener}
+      onSwipedDown={this.onSwipeDownListener}
+      onSwipedUp={this.onSwipeUpListener}
+      onSwipe={this.onSwipeListener}>
+      Demo
+    </Swipe>
   }
 
-  _onSwipeEnd () {
-    this.setState({ actionText: 'Swipe Ended' })
+  onSwipeEnd = (): void => {
+    console.log("Swipe Ended")
   }
-  _onSwipeLeftListener () {
-    this.setState({ actionText: 'Swiped left' })
+  onSwipeLeftListener = (): void => {
+    console.log("Swiped left")
   }
-  _onSwipeRightListener () {
-    this.setState({ actionText: 'Swiped right' })
+  onSwipeRightListener = (): void => {
+    console.log("Swiped right")
   }
-  _onSwipeUpListener () {
-    this.setState({ actionText: 'Swiped Up' })
+  onSwipeUpListener = (): void => {
+    console.log("Swiped Up")
   }
-  _onSwipeDownListener () {
-    this.setState({ actionText: 'Swiped down' })
+  onSwipeDownListener = (): void => {
+    console.log("Swiped down")
   }
-  _onSwipeListener (e) {
-    if (e[1] === 0 && this.state.continuousSwipeListener) this.setState({ actionText: `Swipe x: ${e[0]}` })
-    else if (e[0] === 0 && this.state.continuousSwipeListener) this.setState({ actionText: `Swipe y: ${e[1]}` })
+  onSwipeListener = (p: Position): void => {
+    if (p.x !== 0) {
+      console.log(`Swipe x: ${p.x}`)
+    }
+    if (p.y !== 0) {
+      console.log(`Swipe y: ${p.y}`)
+    }
   }
 }
 
-render(<Demo/>, document.getElementById('app') );
+ReactDOM.render(<Demo/>, document.getElementById("app"))
 ```
 
 ### Props
@@ -88,7 +82,9 @@ render(<Demo/>, document.getElementById('app') );
 
 **```mouseSwipe```** is allow you to turn on swipe listener for mouse event for desktop browsers (touch listener will be working too). The default value is false.
 
-**```preventDefaultEvent```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is false.
+**```preventDefault```** is whether to prevent the browser's touchmove event. Sometimes you would like the target to scroll natively. The default value is false.
+
+**```stopPropagation```** prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
 
 **```onSwipingUp```**, **```onSwipingRight```**, **```onSwipingDown```**, **```onSwipingLeft```**, are called with the event as well as the absolute delta of where the swipe started and where it's currently at. Return distance from starting point.
 
@@ -101,29 +97,38 @@ render(<Demo/>, document.getElementById('app') );
 **```onTransitionEnd```** event is fired when a CSS transition has completed.
 
 
-##### PropTypes
-```javascript
-{
+##### Types
+```typescript
+interface Props {
   nodeName?: string,
-  node?: React.Node,
+  node?: React.ReactNode,
   className?: string,
   style?: Object,
 
-  delta: number,
-  mouseSwipe?: boolean,
-  preventDefaultEvent?: boolean,
+  detectTouch?: boolean,
+  detectMouse?: boolean,
 
-  onSwipe: PropTypes.func,
-  onSwipeEnd: PropTypes.func,
-  onSwipingUp: PropTypes.func,
-  onSwipingRight: PropTypes.func,
-  onSwipingDown: PropTypes.func,
-  onSwipingLeft: PropTypes.func,
-  onSwipedUp: PropTypes.func,
-  onSwipedRight: PropTypes.func,
-  onSwipedDown: PropTypes.func,
-  onSwipedLeft: PropTypes.func,
-  onTransitionEnd: PropTypes.func,
+  delta: number,
+  preventDefault?: boolean,
+  stopPropagation?: boolean,
+
+  children?: any,
+
+  onSwipe: (p: Position) => void
+  onSwipingLeft: (x: number) => void,
+  onSwipingRight: (x: number) => void,
+  onSwipingUp: (y: number) => void,
+  onSwipingDown: (y: number) => void,
+  onSwipedLeft: () => void,
+  onSwipedRight: () => void,
+  onSwipedUp: () => void,
+  onSwipedDown: () => void,
+  onSwipeEnd: () => void,
+  onTransitionEnd: () => void,
+}
+interface Position {
+  x: number,
+  y: number,
 }
 ```
 
@@ -133,8 +138,7 @@ render(<Demo/>, document.getElementById('app') );
 git clone git@github.com:exelban/react-swipe-component.git
 cd react-swipe-component
 yarn install
-
-yarn build:prod
+yarn build
 ```
 
 ### Demo
@@ -146,27 +150,33 @@ yarn dev
 ```
 
 ## What's new
-
+### v3.0.0 (BREAKING CHANGES)
+    - rewrited library in typescript
+    - removed eslint
+    - removed flow
+    - update all dependencies
+    - added stopPropagation
+    - changed returning values structure
+    - updated example
 
 ### v2.1.0
-    - updated some dependencies;
-    - removed unnecessary comments;
-    - fixed docs script for build;
+    - updated some dependencies
+    - removed unnecessary comments
+    - fixed docs script for build
     
 ### v2.0.0
-    - updated all dependencies;
-    - added flow types;
-    - added eslint;
-    - added onSwipeEnd to example;
-    - renamed ./lib/Swipe to ./lib/index;
-    - moved to Babel 7 for compiling;
+    - updated all dependencies
+    - added flow types
+    - added eslint
+    - added onSwipeEnd to example
+    - renamed ./lib/Swipe to ./lib/index
+    - moved to Babel 7 for compiling
 
 ### v1.4.0
-    - fixed Google Chrome preventDefault error in console;
-    - small fixed with main example;
-    - started using webpack to compile to ES5;
-    - updated dependency;
+    - fixed Google Chrome preventDefault error in console
+    - small fixed with main example
+    - started using webpack to compile to ES5
+    - updated dependency
 
 ## License
-
 [Apache License 2.0](https://github.com/exelban/react-swipe-component/blob/master/LICENSE.md)

@@ -1,70 +1,100 @@
-const path = require('path')
-const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const path = require("path")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 const PATH = {
-  src: path.resolve(__dirname, './src'),
-  node: path.resolve(__dirname, './node_modules'),
-  output: path.resolve(__dirname, './dist'),
+  src: path.resolve(__dirname, "./src"),
+  node: path.resolve(__dirname, "./node_modules"),
+  output: path.resolve(__dirname, "./dist/"),
 }
 
-module.exports = {
+const config = {
   target: 'web',
   resolve: {
     modules: [PATH.src, PATH.node],
-    extensions: ['.js', '.css'],
-    symlinks: false,
+    extensions: [".ts", ".tsx", ".js", ".css"]
   },
+
   entry: {
-    app: './src/index.js',
+    main: `${PATH.src}/index.tsx`,
   },
   output: {
     path: PATH.output,
-    filename: '[name].min.js',
+    filename: '[name].js',
   },
+
   module: {
     rules: [
       {
-        test: /js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-        },
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader"
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        loader: "source-map-loader"
       },
       {
         test: /.?css$/,
         include: [PATH.src, PATH.node],
-        use: ['style-loader', 'css-loader?source-map'],
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              localIdentName: '[name]_[local]_[hash:base64:5]'
+            }
+          }
+        ]
       },
-    ],
+    ]
   },
+
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
     new CleanWebpackPlugin(PATH.output),
+    new HtmlWebpackPlugin({
+      template: `${PATH.src}/template.html`,
+      filename: 'index.html',
+      inject: true,
+      minify: {
+        collapseWhitespace: false,
+        collapseInlineTagWhitespace: false,
+        removeComments: true,
+        removeRedundantAttributes: true,
+      },
+      inlineSource: /^.*$/,
+    }),
   ],
-  devServer: {
-    port: 8080,
-    historyApiFallback: true,
-    compress: false,
-    inline: true,
-    publicPath: '/dist',
-  },
+
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
+          chunks: "initial",
+          name: "vendor",
           enforce: true,
         },
-        app: {
+        main: {
           test: /src/,
-          chunks: 'initial',
-          name: 'app',
+          chunks: "initial",
+          name: "main",
           enforce: true,
         },
       },
     },
   },
+
+  devServer: {
+    port: 8080,
+    compress: false,
+    inline: true,
+    publicPath: '/',
+    host: 'localhost',
+  },
 }
+
+module.exports = config

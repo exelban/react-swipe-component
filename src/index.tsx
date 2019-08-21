@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 interface Props {
   nodeName?: string,
@@ -103,11 +103,11 @@ class Swipe extends React.Component<Props, {}> {
       onTransitionEnd: this.props.onTransitionEnd,
     }
     if (newProps.style !== undefined) {
-      newProps.style.touchAction = 'none'
+      newProps.style.touchAction = "none"
     }
 
     // @ts-ignore
-    const elementType: string = this.props.nodeName || this.props.node || 'div'
+    const elementType: string = this.props.nodeName || this.props.node || "div"
     return React.createElement(elementType, newProps, this.props.children)
   }
 
@@ -128,7 +128,7 @@ class Swipe extends React.Component<Props, {}> {
     }
     if (isTouchEvent(e) && touches) {
       if (!touches[0]) {
-        throw new Error('touch is not find')
+        throw new Error("touch is not find")
       }
       x = touches[0].clientX
       y = touches[0].clientY

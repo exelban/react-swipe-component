@@ -117,7 +117,7 @@ class Swipe extends React.Component<Props, {}> {
     return e.nativeEvent
   }
 
-  private moveStart = (e: MouseEvent | TouchEvent) => {
+  private delectXandY = (e: MouseEvent | TouchEvent) => {
     let x: number = 0
     let y: number = 0
     const touches: TouchList = (e as TouchEvent).touches
@@ -134,6 +134,12 @@ class Swipe extends React.Component<Props, {}> {
       y = touches[0].clientY
     }
 
+    return { x, y }
+  }
+
+  private moveStart = (e: MouseEvent | TouchEvent) => {
+    let { x, y } = this.delectXandY(e)
+
     this.store.x = parseFloat(x.toFixed(2))
     this.store.y = parseFloat(y.toFixed(2))
     this.store.status = true
@@ -141,22 +147,7 @@ class Swipe extends React.Component<Props, {}> {
   }
   private move = (e: MouseEvent | TouchEvent) => {
     if (!this.store.status) return
-
-    let x: number = 0
-    let y: number = 0
-    const touches: TouchList = (e as TouchEvent).touches
-
-    if (e instanceof MouseEvent) {
-      x = e.clientX
-      y = e.clientY
-    }
-    if (isTouchEvent(event) && touches) {
-      if (!touches[0]) {
-        throw new Error('touch is not find')
-      }
-      x = touches[0].clientX
-      y = touches[0].clientY
-    }
+    let { x, y } = this.delectXandY(e)
 
     x = parseFloat(x.toFixed(2))
     y = parseFloat(y.toFixed(2))
